@@ -12,28 +12,38 @@ import AVFoundation
 class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBOutlet weak var recordBtn: UIButton!
-    @IBOutlet weak var stopBtn: UIButton!
-    @IBOutlet weak var recordLabel: UILabel!
     var audioRecorder : AVAudioRecorder!
     let STOP_SEGUE = "stopRecording"
+    private var recording = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        stopBtn.isEnabled=false
-        stopBtn.contentMode = .center
-        stopBtn.imageView?.contentMode = .scaleAspectFit
+        recordBtn.contentMode = .center
+        recordBtn.imageView?.contentMode = .scaleAspectFit
     }
     
     
-    @IBAction func record(_ sender: Any) {
-        stopBtn.isEnabled=true
-        recordBtn.isEnabled=false
-        recordLabel.text = "Recording..."
-        
-        
+    
+    @IBAction func recordBtnClicked(_ sender: Any) {
+        if !recording {
+            record()
+            recording = true
+            if let image = UIImage(named: "Stop") {
+                recordBtn.setImage(image, for: [])
+            }
+        } else {
+            stopRecording()
+            recording = false
+            if let image = UIImage(named: "Record") {
+                recordBtn.setImage(image, for: [])
+            }
+        }
+    }
+    
+    private func record() {
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]
@@ -49,11 +59,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.record()
     }
     
-    @IBAction func stopRecording(_ sender: Any) {
-        stopBtn.isEnabled=false
-        recordBtn.isEnabled=true
-        recordLabel.text = "Tap to record"
-        
+    private func stopRecording() {
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
@@ -62,10 +68,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag {
             performSegue(withIdentifier: STOP_SEGUE, sender: audioRecorder.url)
-        } else {
-            recordLabel.text = "Error recording"
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
