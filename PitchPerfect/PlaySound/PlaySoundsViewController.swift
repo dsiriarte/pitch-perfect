@@ -29,6 +29,8 @@ class PlaySoundsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureUI(.notPlaying)
+        stopButton.contentMode = .center
+        stopButton.imageView?.contentMode = .scaleAspectFit
     }
 
     override func viewDidLoad() {

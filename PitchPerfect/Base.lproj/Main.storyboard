@@ -28,8 +28,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yne-9E-8pf">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yne-9E-8pf">
                                 <rect key="frame" x="175" y="491" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="NG3-7Z-pU6"/>
+                                    <constraint firstAttribute="height" constant="64" id="hIa-Sp-lhT"/>
+                                </constraints>
                                 <state key="normal" title="Stop" image="Stop"/>
                                 <connections>
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pkv-y6-LOB"/>
@@ -38,13 +42,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="y2W-at-cXM" firstAttribute="centerX" secondItem="yne-9E-8pf" secondAttribute="centerX" id="0k2-v5-n8m"/>
                             <constraint firstItem="y2W-at-cXM" firstAttribute="top" secondItem="8Ub-4h-Aaz" secondAttribute="bottom" constant="8" id="1hw-Gw-UVl"/>
-                            <constraint firstItem="8Ub-4h-Aaz" firstAttribute="centerX" secondItem="yne-9E-8pf" secondAttribute="centerX" id="5Jl-TP-MyH"/>
                             <constraint firstItem="8Ub-4h-Aaz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8XX-Uf-m2R"/>
-                            <constraint firstItem="yne-9E-8pf" firstAttribute="top" secondItem="8Ub-4h-Aaz" secondAttribute="bottom" constant="52" id="EKz-OO-lig"/>
                             <constraint firstItem="8Ub-4h-Aaz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="211" id="GpK-BA-Pav"/>
-                            <constraint firstItem="yne-9E-8pf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="175" id="PFn-zj-WQ6"/>
+                            <constraint firstItem="yne-9E-8pf" firstAttribute="centerX" secondItem="y2W-at-cXM" secondAttribute="centerX" id="Jth-aa-3vP"/>
+                            <constraint firstItem="yne-9E-8pf" firstAttribute="centerX" secondItem="8Ub-4h-Aaz" secondAttribute="centerX" id="gzD-3l-vXY"/>
+                            <constraint firstItem="yne-9E-8pf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="175" id="kxB-D8-j2G"/>
+                            <constraint firstItem="yne-9E-8pf" firstAttribute="top" secondItem="y2W-at-cXM" secondAttribute="bottom" constant="8" id="mW0-g5-B9j"/>
                             <constraint firstItem="8Ub-4h-Aaz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="nsV-R3-QxA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -129,11 +133,14 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TZB-IG-7hS">
+                                    <stackView opaque="NO" contentMode="center" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TZB-IG-7hS">
                                         <rect key="frame" x="0.0" y="580.5" width="414" height="193.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FjQ-Gv-V6B" userLabel="stopButton">
+                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FjQ-Gv-V6B" userLabel="stopButton">
                                                 <rect key="frame" x="0.0" y="19.5" width="414" height="155"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="155" id="ygA-W7-QUZ"/>
+                                                </constraints>
                                                 <state key="normal" image="Stop"/>
                                                 <connections>
                                                     <action selector="stopButtonPressed:" destination="EZH-Pd-weo" eventType="touchUpInside" id="168-NC-GfH"/>

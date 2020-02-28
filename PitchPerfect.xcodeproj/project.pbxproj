@@ -103,15 +103,14 @@
 		1B38F76723FC45D80029A990 /* PitchPerfect */ = {
 			isa = PBXGroup;
 			children = (
+				1BD873D5240549DB008BBB8D /* PlaySound */,
+				1BD873D4240549B1008BBB8D /* Recording */,
 				1B38F76823FC45D80029A990 /* AppDelegate.swift */,
 				1B38F76A23FC45D80029A990 /* SceneDelegate.swift */,
-				1B38F76C23FC45D80029A990 /* RecordViewController.swift */,
 				1B38F76E23FC45D80029A990 /* Main.storyboard */,
 				1B38F77123FC45DA0029A990 /* Assets.xcassets */,
 				1B38F77323FC45DA0029A990 /* LaunchScreen.storyboard */,
 				1B38F77623FC45DA0029A990 /* Info.plist */,
-				1B38F79823FDD0A50029A990 /* PlaySoundsViewController.swift */,
-				1BD873C42401E2CA008BBB8D /* PlaySoundsViewController+Audio.swift */,
 			);
 			path = PitchPerfect;
 			sourceTree = "<group>";
@@ -132,6 +131,23 @@
 				1B38F78C23FC45DA0029A990 /* Info.plist */,
 			);
 			path = PitchPerfectUITests;
+			sourceTree = "<group>";
+		};
+		1BD873D4240549B1008BBB8D /* Recording */ = {
+			isa = PBXGroup;
+			children = (
+				1B38F76C23FC45D80029A990 /* RecordViewController.swift */,
+			);
+			path = Recording;
+			sourceTree = "<group>";
+		};
+		1BD873D5240549DB008BBB8D /* PlaySound */ = {
+			isa = PBXGroup;
+			children = (
+				1B38F79823FDD0A50029A990 /* PlaySoundsViewController.swift */,
+				1BD873C42401E2CA008BBB8D /* PlaySoundsViewController+Audio.swift */,
+			);
+			path = PlaySound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
